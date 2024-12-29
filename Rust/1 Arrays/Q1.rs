@@ -6,7 +6,7 @@ use std::io;
 fn main() {
     let mut input = String::new();
     
-    println!("Input the number of elements to store in the array:");
+    println!("Enter the number of elements to store in the array:");
     io::stdin().read_line(&mut input).expect("Failed to read input");
     let n: usize = input.trim().parse().expect("Please enter a valid number");
     input.clear();
