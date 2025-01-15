@@ -1,5 +1,5 @@
-// The program below creates and displays a singly linked list. "reverse_and_display" function reverses the list and displays it.  
-
+// The program below creates and displays a singly linked list. "reverse_and_display" function reverses the list and displays it. "insert_node_beginning" function inserts a new node at the beginning of the list.
+// "insertNodeAtBeginning" function inserts a new node at the end of the linked list.
 
 use std::io;
 use std::rc::Rc;
@@ -67,15 +67,52 @@ fn reverse_and_display(mut head: Option<Rc<RefCell<Node>>>) -> Option<Rc<RefCell
     prev
 }
 
+fn insert_node_beginning(head: &mut Option<Rc<RefCell<Node>>>, num: i32) {
+    let new_node = Rc::new(RefCell::new(Node {
+        num,
+        next: head.take(),
+    }));
+
+    *head = Some(new_node);
+}
+
+fn insert_node_end(head: &mut Option<Rc<RefCell<Node>>>, num: i32) {
+    let new_node = Rc::new(RefCell::new(Node { num, next: None }));
+
+    if let Some(ref mut current) = head {
+        let mut current = Rc::clone(current); // Clone the Rc to avoid borrowing issues
+        loop {
+            let next_node = current.borrow().next.clone(); // Clone the next pointer
+            match next_node {
+                Some(next) => current = next, // Move to the next node
+                None => break, // Exit the loop if we reach the end
+            }
+        }
+        current.borrow_mut().next = Some(new_node); // Attach the new node at the end
+    } else {
+        *head = Some(new_node); // Handle empty list
+    }
+}
+
+
+
 fn main() {
     println!("Enter the number of nodes: ");
     let mut input = String::new();
     io::stdin().read_line(&mut input).expect("Failed to read input");
     let n: usize = input.trim().parse().expect("Please enter a valid number");
 
-    let head = create_node_list(n);
+    let mut head = create_node_list(n);
     println!("\nOriginal Linked List Content:");
     display_list(head.clone());
 
-    reverse_and_display(head); // The reversed list is displayed here
+    insert_node_beginning(&mut head, 7);
+    println!("\nAfter inserting 7 at the beginning:");
+    display_list(head.clone());
+
+    insert_node_end(&mut head, 99);
+    println!("\nAfter inserting 99 at the end:");
+    display_list(head.clone());
+
+    reverse_and_display(head);
 }

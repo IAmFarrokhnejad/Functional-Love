@@ -1,4 +1,5 @@
-// The program below creates and displays a singly linked list. "reverseAndDisplay" function reverses the list and displays it.
+// The program below creates and displays a singly linked list. "reverseAndDisplay" function reverses the list and displays it. "insertNodeAtBeginning" function inserts a new node at the beginning of the list.
+// "insertNodeAtBeginning" function inserts a new node at the end of the linked list.
 
 package main
 
@@ -10,7 +11,7 @@ import (
 	"strings"
 )
 
-// Node represents a single node in the list
+// Node represents a single node in the linked list
 type Node struct {
 	data int
 	next *Node
@@ -77,6 +78,27 @@ func reverseAndDisplay(head *Node) *Node {
 	return prev
 }
 
+func insertNodeAtBeginning(head *Node, num int) *Node {
+	newNode := &Node{data: num, next: head}
+	return newNode
+}
+
+func insertNodeAtEnd(head *Node, num int) *Node {
+	newNode := &Node{data: num, next: nil}
+
+	if head == nil {
+		return newNode // Handle empty list
+	}
+
+	current := head
+	for current.next != nil {
+		current = current.next // Traverse to the end of the list
+	}
+	current.next = newNode // Attach the new node at the end
+
+	return head
+}
+
 func main() {
 	fmt.Print("Enter the number of nodes: ")
 	var n int
@@ -88,6 +110,29 @@ func main() {
 
 	head := createNodeList(n)
 	fmt.Println("\nOriginal Linked List Content:")
+	displayList(head)
+
+	fmt.Print("\nEnter data for the new node to insert at the beginning: ")
+	var newNum int
+	_, err = fmt.Scan(&newNum)
+	if err != nil {
+		fmt.Println("Please enter a valid integer.")
+		return
+	}
+	head = insertNodeAtBeginning(head, newNum)
+
+	fmt.Println("\nLinked List after adding new node at the beginning:")
+	displayList(head)
+
+	fmt.Print("\nEnter data for the new node to insert at the end: ")
+	_, err = fmt.Scan(&newNum)
+	if err != nil {
+		fmt.Println("Please enter a valid integer.")
+		return
+	}
+	head = insertNodeAtEnd(head, newNum)
+
+	fmt.Println("\nLinked List after adding new node at the end:")
 	displayList(head)
 
 	head = reverseAndDisplay(head)
