@@ -1,5 +1,5 @@
 // The program below prints a matrix in spiral form.
-
+// Author: Morteza Farrokhnejad
 
 #include <stdio.h>
 

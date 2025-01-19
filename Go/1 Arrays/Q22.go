@@ -1,4 +1,5 @@
 // The program below moves all zeroes to the end of a given array.
+// Author: Morteza Farrokhnejad
 
 package main
 

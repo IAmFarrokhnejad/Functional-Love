@@ -1,5 +1,5 @@
 // The program below sorts an array of 0s, 1s and 2s using a three-way partitioning approach.
-
+// Author: Morteza Farrokhnejad
 
 fn swap(arr: &mut Vec<i32>, i: usize, j: usize) {
     let temp = arr[i];

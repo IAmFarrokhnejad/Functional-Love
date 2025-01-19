@@ -26,6 +26,7 @@ void PickOutZeros(int *arr1, int arr_size) {
     }
 }
 
+// Author: Morteza Farrokhnejad
 int main() {
     int arr1[] = {24, 0, 7, 0, 4, 0, 7, -5, 8, 2};
     int n = sizeof(arr1) / sizeof(arr1[0]);

@@ -21,6 +21,7 @@ int checkIfSubset(int *arr1 , int arr1_size, int *arr2, int arr2_size) {
     return 1; // arr2 is a subset of arr1
 }
 
+// Author: Morteza Farrokhnejad
 int main() {
     int arr1[] = {4, 2, 7, 1, 6, 9, 5, 0, 2};
     int arr2[] = {5, 4, 2, 0, 1};

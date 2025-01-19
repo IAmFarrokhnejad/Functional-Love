@@ -1,4 +1,5 @@
 // The program below finds the largest, second largest, and the third largest elements of an array without sorting the said array.
+// Author: Morteza Farrokhnejad
 
 package main
 

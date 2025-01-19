@@ -1,4 +1,5 @@
-//The program below calculates the expected sum of the sequence up to the length of the array, then subtract the sum of the array's elements to find the missing number.
+// The program below calculates the expected sum of the sequence up to the length of the array, then subtract the sum of the array's elements to find the missing number.
+// Author: Morteza Farrokhnejad
 
 package main
 

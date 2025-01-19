@@ -1,5 +1,5 @@
 // The program below takes a specified number of integer inputs, stores them in an array, and then determines and prints the highest and lowest values among the elements.
-
+// Author: Morteza Farrokhnejad
 
 use std::io;
 

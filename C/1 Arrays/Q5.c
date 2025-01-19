@@ -1,5 +1,5 @@
 // In this program, we will enter two sorted arrays. While merging them, we will compare the elements of both the arrays and merge them in a sorted manner.
-
+// Author: Morteza Farrokhnejad
 
 #include <stdio.h>
 

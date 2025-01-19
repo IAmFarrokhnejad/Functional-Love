@@ -1,6 +1,6 @@
 // The program below sorts an array in both ascending and descending order using the Quicksort algorithm.
 // Quicksort is one of the most efficient sorting algorithms with an average time complexity of 𝑂(𝑛 log 𝑛).
-
+// Author: Morteza Farrokhnejad
 package main
 
 import (

@@ -1,6 +1,6 @@
 // The program below counts and displays the frequency of each element in an array.
 // The program accepts a specified number of integer inputs, stores them in an array, and then determines and prints how many times each element appears in the array.
-
+// Author: Morteza Farrokhnejad
 package main
 
 import (

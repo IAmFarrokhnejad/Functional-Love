@@ -1,4 +1,5 @@
 // The program below finds two array elements whose sum is closest to zero.
+// Author: Morteza Farrokhnejad
 
 package main
 

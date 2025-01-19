@@ -1,6 +1,6 @@
 // The program below prompts the user to input the size of the matrix and its elements.
 // It then calculates the sum of each row and column, and displays the original matrix followed by the sums of its rows and columns as output.
-
+// Author: Morteza Farrokhnejad
 use std::io;
 
 fn main() {

@@ -1,4 +1,5 @@
 // The program below returns the counting sort on an array.
+// Author: Morteza Farrokhnejad
 
 package main
 

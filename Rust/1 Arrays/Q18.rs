@@ -1,5 +1,5 @@
 // The program below finds two array elements whose sum is closest to zero.
-
+// Author: Morteza Farrokhnejad
 
 fn find_min_sum_pair(arr: &[i32]) -> Option<(i32, i32)> {
     // Check if the array is valid and has at least two elements

@@ -1,4 +1,5 @@
 // The program below checks whether one array is a subset of another array (all elements of the second array are present in the first array).
+// Author: Morteza Farrokhnejad
 
 package main
 

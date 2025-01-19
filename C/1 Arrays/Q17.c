@@ -1,6 +1,6 @@
 //The program below calculates the expected sum of the sequence up to the length of the array, then subtract the sum of the array's elements to find the missing number. 
 // This approach efficiently identifies the missing number without requiring additional space or complex algorithms.
-
+// Author: Morteza Farrokhnejad
 #include <stdio.h>
 
 int findMissingNum(int *arr1, int ar_size) { // Function to find the missing number

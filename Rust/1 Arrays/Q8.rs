@@ -1,6 +1,6 @@
 //The following program separates odd and even integers from a given array into two separate arrays. 
 // The program will take a specified number of integer inputs, store them in an array, and then create and display two new arrays: one containing all even elements and the other containing all odd elements.
-
+// Author: Morteza Farrokhnejad
 use std::io;
 
 fn main() {

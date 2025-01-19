@@ -1,6 +1,6 @@
 // The program below involves copying the elements from one array to another. 
 // The program takes a specified number of integer inputs to store in the first array, then copies these elements to a second array, and finally displays the contents of both arrays.
-
+// Author: Morteza Farrokhnejad
 use std::io;
 
 fn main() {

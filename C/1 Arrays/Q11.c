@@ -1,6 +1,6 @@
 // The program below insert values in the array (unsorted list). It promots the user to enter an integer value and a value to be inserted and its position.
 // The program will then display the array after inserting the new value at the given position.
-
+// Author: Morteza Farrokhnejad
 #include <stdio.h>
 
 void main()

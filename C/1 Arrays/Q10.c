@@ -21,6 +21,7 @@ int main() {
         scanf("%d", &arr1[i]);
     }
 
+    // Author: Morteza Farrokhnejad
     printf("Input the value to be inserted : ");
     scanf("%d", &inval);
 

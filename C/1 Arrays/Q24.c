@@ -1,5 +1,5 @@
 // The program returns the counting sort on an array.
-
+// Author: Morteza Farrokhnejad
 
 #include <stdio.h>
 

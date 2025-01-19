@@ -1,6 +1,6 @@
 // This program reads a user-defined number of integer values into an array and then display these values in reverse order.
 // After storing the values, the program first prints them in the original order and then prints them in the reversed order.
-
+// Author: Morteza Farrokhnejad
 package main
 
 import (

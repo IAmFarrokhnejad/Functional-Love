@@ -1,6 +1,6 @@
 // The program below adds two square matrices of the same size. 
 //The program prompts the user to input the size of the matrices (less than 5), elements for each matrix, and then calculates the sum of the matrices. It displays the original matrices and their sum as output.
-
+// Author: Morteza Farrokhnejad
 #include <stdio.h>
 
 void main() {

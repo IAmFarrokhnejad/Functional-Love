@@ -1,6 +1,6 @@
 // The program below reads a specified number of integers into an array and then calculate and print the sum of these elements. 
 // After storing the input values, the program iterates through the array to compute the total sum and display the result.
-
+// Author: Morteza Farrokhnejad
 #include <stdio.h>
 
 int main()

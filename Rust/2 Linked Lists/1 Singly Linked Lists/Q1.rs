@@ -1,6 +1,6 @@
 // The program below creates and displays a singly linked list. "reverse_and_display" function reverses the list and displays it. "insert_node_beginning" function inserts a new node at the beginning of the list.
 // "insertNodeAtBeginning" function inserts a new node at the end of the linked list.
-
+// Author: Morteza Farrokhnejad
 use std::io;
 use std::rc::Rc;
 use std::cell::RefCell;

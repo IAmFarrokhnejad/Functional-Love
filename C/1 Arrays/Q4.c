@@ -1,6 +1,6 @@
 // The program below counts the number of duplicate elements in an array. 
 // The program takes a specified number of integer inputs, stores them in an array, and then determines and displays how many elements appear more than once.
-
+// Author: Morteza Farrokhnejad
 #include <stdio.h>
 
 int main()

@@ -1,5 +1,5 @@
 //The program below calculates the expected sum of the sequence up to the length of the array, then subtract the sum of the array's elements to find the missing number. 
-
+// Author: Morteza Farrokhnejad
 
 fn findMissingNum(arr: &[i32], arr_size: usize) -> i32 {
     // Function to find the missing number

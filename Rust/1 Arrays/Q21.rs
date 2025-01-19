@@ -1,5 +1,5 @@
 // The program below checks whether an array is a subset of another array.
-
+// Author: Morteza Farrokhnejad
 
 fn is_subset(arr1: &[i32], arr2: &[i32]) -> bool {
     for &elem in arr2 {

@@ -1,5 +1,5 @@
 // The program below sorts an array of 0s, 1s and 2s using a three-way partitioning approach.
-
+// Author: Morteza Farrokhnejad
 
 #include <stdio.h>
 

@@ -1,4 +1,5 @@
 // The program below deletes an element at a desired position from an array.
+// Author: Morteza Farrokhnejad
 
 package main
 

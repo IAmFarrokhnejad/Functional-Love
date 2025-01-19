@@ -1,5 +1,5 @@
 // The program below moves all zeroes to the end of a given array. 
-
+// Author: Morteza Farrokhnejad
 
 fn move_zeros_to_end(arr: &mut Vec<i32>) {
     let mut left = 0;

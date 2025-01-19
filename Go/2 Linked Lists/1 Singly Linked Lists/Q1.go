@@ -1,6 +1,6 @@
 // The program below creates and displays a singly linked list. "reverseAndDisplay" function reverses the list and displays it. "insertNodeAtBeginning" function inserts a new node at the beginning of the list.
 // "insertNodeAtBeginning" function inserts a new node at the end of the linked list.
-
+// Author: Morteza Farrokhnejad
 package main
 
 import (

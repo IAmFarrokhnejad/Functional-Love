@@ -1,6 +1,6 @@
 // The program below finds two array elements whose sum is closest to zero.
 // It  iterate through the array, checking pairs of elements, and determine the pair with the smallest absolute sum, then print those elements.
-
+// Author: Morteza Farrokhnejad
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>

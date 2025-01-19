@@ -1,5 +1,5 @@
 // The program below prints a matrix in spiral form.
-
+// Author: Morteza Farrokhnejad
 
 fn spiral_of_matrix(matrix: &[Vec<i32>]) {
     let rows = matrix.len();

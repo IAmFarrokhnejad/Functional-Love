@@ -1,5 +1,5 @@
 // The program below returns the counting sort on an array.
-
+// Author: Morteza Farrokhnejad
 
 fn countingSort(arr: &mut [usize], max_value: usize) {
     let mut count = vec![0; max_value + 1];

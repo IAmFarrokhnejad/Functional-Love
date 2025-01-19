@@ -1,7 +1,7 @@
 // The program below multiplies two matrices as long as multiplication is possible. 
 //The program prompts the user to input the size of the matrices, elements for each matrix, and then calculates the result of multiplication.
 // Then it displays the original matrices and the result of multiplication as output.
-
+// Author: Morteza Farrokhnejad
 #include <stdio.h>
 
 int main() {
