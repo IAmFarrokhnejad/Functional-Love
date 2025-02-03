@@ -161,11 +161,11 @@ fn insert_node_beginning(head: &mut Option<Rc<RefCell<Node>>>, num: i32) {
 fn insert_node_end(head: &mut Option<Rc<RefCell<Node>>>, num: i32) {
     let new_node = Rc::new(RefCell::new(Node { num, next: None }));
 
-    if let Some(ref mut first_node) = head {
+    if let Some(first_node) = head {
         let current = Rc::clone(first_node);
         {
             let mut current_ref = current;
-            while let Some(next) = current_ref.borrow().next.clone() {
+            while let Some(next) = current_ref.clone().borrow().next.clone() {
                 current_ref = next;
             }
             current_ref.borrow_mut().next = Some(new_node);
@@ -183,10 +183,21 @@ fn insert_node_middle(head: &mut Option<Rc<RefCell<Node>>>, num: i32) {
 
     let mut slow = head.clone();
     let mut fast = head.clone();
+    
+    if head.is_none() || head.as_ref().unwrap().borrow().next.is_none() {
+        println!("List is too short to delete middle node.");
+        return;
+    }
 
     while let (Some(_), Some(next_fast)) = (fast.clone(), fast.clone().unwrap().borrow().next.clone()) {
         fast = next_fast.borrow().next.clone();
         slow = slow.unwrap().borrow().next.clone();
+        if let Some(next_fast) = fast.clone().unwrap().borrow().next.clone().unwrap().borrow().next.clone() {
+            continue;
+        } else {
+            println!("List has no middle node.");
+            return;
+        }
     }
 
     if let Some(slow_node) = slow {
