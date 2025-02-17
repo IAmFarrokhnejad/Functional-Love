@@ -1,10 +1,21 @@
-// Incomplete 
+// The program below demosntrates implementation of a singly linked list. Following functions are included:
 
+// 1. create_node_list(n: usize): Creates a new linked list with n nodes, where data for each node is input by the user.
+// 2. display_list(head): Prints all elements in the linked list with arrow separators (e.g., "1 -> 2 -> 3").
+// 3. delete_first_node(head): Removes the first node from the linked list and updates the head.
+// 4. delete_middle_node(head): Finds and removes the middle node using the "slow and fast pointer" technique.
+// 5. delete_last_node(head): Traverses to the end of the list and removes the last node.
+// 6. reverse_and_display(head): Reverses the order of nodes in the list and displays the result.
+// 7. insert_node_beginning(head, num): Adds a new node with value 'num' at the start of the list.
+// 8. insert_node_end(head, num): Adds a new node with value 'num' at the end of the list.
+// 9. insert_node_middle(head, num): Adds a new node with value 'num' in the middle of the list.
+// 10. search_element(head, value): Searches for a value in the list and prints its position if found.
 
 // Author: Morteza Farrokhnejad
+
+use std::cell::RefCell;
 use std::io;
 use std::rc::Rc;
-use std::cell::RefCell;
 
 #[derive(Debug)]
 struct Node {
@@ -19,7 +30,9 @@ fn create_node_list(n: usize) -> Option<Rc<RefCell<Node>>> {
     for i in 1..=n {
         let mut input = String::new();
         println!("Enter data for node {}: ", i);
-        io::stdin().read_line(&mut input).expect("Failed to read input");
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
         let num: i32 = input.trim().parse().expect("Please enter a valid number");
 
         let new_node = Rc::new(RefCell::new(Node { num, next: None }));
@@ -75,7 +88,9 @@ fn delete_middle_node(head: &mut Option<Rc<RefCell<Node>>>) {
     let mut prev: Option<Rc<RefCell<Node>>> = None;
 
     // Find the middle node using slow and fast pointers
-    while let (Some(_), Some(next_fast)) = (fast.clone(), fast.clone().unwrap().borrow().next.clone()) {
+    while let (Some(_), Some(next_fast)) =
+        (fast.clone(), fast.clone().unwrap().borrow().next.clone())
+    {
         fast = next_fast.borrow().next.clone();
         if fast.is_none() {
             break;
@@ -135,7 +150,7 @@ fn delete_last_node(head: &mut Option<Rc<RefCell<Node>>>) {
 fn reverse_and_display(head: Option<Rc<RefCell<Node>>>) -> Option<Rc<RefCell<Node>>> {
     let mut prev: Option<Rc<RefCell<Node>>> = None;
     let mut current = head;
-    
+
     while let Some(curr_node) = current {
         let next = curr_node.borrow_mut().next.take();
         curr_node.borrow_mut().next = prev;
@@ -183,23 +198,25 @@ fn insert_node_middle(head: &mut Option<Rc<RefCell<Node>>>, num: i32) {
 
     let mut slow = head.clone();
     let mut fast = head.clone();
-    
-    if head.is_none() || head.as_ref().unwrap().borrow().next.is_none() {
-        println!("List is too short to delete middle node.");
-        return;
-    }
 
-    while let (Some(_), Some(next_fast)) = (fast.clone(), fast.clone().unwrap().borrow().next.clone()) {
-        fast = next_fast.borrow().next.clone();
-        slow = slow.unwrap().borrow().next.clone();
-        if let Some(next_fast) = fast.clone().unwrap().borrow().next.clone().unwrap().borrow().next.clone() {
-            continue;
+    // Find the middle using slow and fast pointers
+    while let Some(fast_node) = fast.clone() {
+        if fast_node.borrow().next.is_none() {
+            break;
+        }
+        
+        if let Some(next_fast) = fast_node.borrow().next.clone() {
+            if next_fast.borrow().next.is_none() {
+                break;
+            }
+            fast = next_fast.borrow().next.clone();
+            slow = slow.unwrap().borrow().next.clone();
         } else {
-            println!("List has no middle node.");
-            return;
+            break;
         }
     }
 
+    // Insert the new node after the slow pointer
     if let Some(slow_node) = slow {
         let new_node = Rc::new(RefCell::new(Node {
             num,
@@ -209,10 +226,37 @@ fn insert_node_middle(head: &mut Option<Rc<RefCell<Node>>>, num: i32) {
     }
 }
 
+fn search_element(head: Option<Rc<RefCell<Node>>>, value: i32) {
+    if head.is_none() {
+        println!("List is empty.");
+        return;
+    }
+
+    let mut current = head;
+    let mut position = 1;
+    let mut found = false;
+
+    while let Some(node) = current {
+        if node.borrow().num == value {
+            println!("Element found at node {}", position);
+            found = true;
+            break;
+        }
+        current = node.borrow().next.clone();
+        position += 1;
+    }
+
+    if !found {
+        println!("Element not found in the list.");
+    }
+}
+
 fn main() {
     println!("Enter the number of nodes: ");
     let mut input = String::new();
-    io::stdin().read_line(&mut input).expect("Failed to read input");
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Failed to read input");
     let n: usize = input.trim().parse().expect("Please enter a valid number");
 
     let mut head = create_node_list(n);
@@ -245,8 +289,12 @@ fn main() {
     println!("\nAfter deleting last node:");
     display_list(head.clone());
 
-    // Reverse the final list and store the result
-    let reversed_head = reverse_and_display(head);
-    // Only assign if you need to use the head later
-    let _final_head = reversed_head;
+    let head = reverse_and_display(head); 
+    println!("\nEnter the element to be searched: ");
+    let mut search_input = String::new();
+    io::stdin().read_line(&mut search_input).expect("Failed to read input");
+
+    let search_value: i32 = search_input.trim().parse().expect("Please enter a valid number");
+
+    search_element(head, search_value); // Use the reversed list head
 }

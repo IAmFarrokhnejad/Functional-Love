@@ -1,4 +1,15 @@
-// Incomplete
+// The program below demosntrates implementation of a singly linked list. Following functions are included:
+
+// 1. void createNodeList(int n): Creates a new linked list with n nodes, where data for each node is input by the user.
+// 2. void displayList(): Prints all elements in the linked list with arrow separators (e.g., "1 -> 2 -> 3").
+// 3. void deleteFirstNode(): Removes the first node from the linked list and updates the head.
+// 4. void deleteMiddleNode(int position): Finds and removes the middle node using the "slow and fast pointer" technique.
+// 5. void deleteLastNode(): Traverses to the end of the list and removes the last node.
+// 6. void reverseAndDisplay(): Reverses the order of nodes in the list and displays the result.
+// 7. void insertNodeBeginning(int num): Adds a new node with value 'num' at the start of the list.
+// 8. void insertNodeAtEnd(int num): Adds a new node with value 'num' at the end of the list.
+// 9. void insertNodeMiddle(int num): Adds a new node with value 'num' in the middle of the list.
+// 10. void searchElement(int value): Searches for a value in the list and prints its position if found.
 
 
 // Author: Morteza Farrokhnejad
@@ -21,6 +32,8 @@ void insertNodeMiddle(int num);
 void deleteFirstNode();
 void deleteMiddleNode(int position);
 void deleteLastNode();
+void searchElement(int value);
+
 
 int main() {
     int n;
@@ -57,7 +70,12 @@ int main() {
     displayList();
     
     printf("\nReversed Linked List Content:\n");
-    reverseAndDisplay(); 
+    reverseAndDisplay();
+
+    int searchValue;
+    printf("\nInput the element to be searched : ");
+    scanf("%d", &searchValue);
+    searchElement(searchValue);
 
     return 0;
 }
@@ -238,4 +256,29 @@ void deleteLastNode() {
 
     prev->next = NULL;
     free(tmp);
+}
+
+void searchElement(int value) {
+    struct node *temp = head;
+    int position = 1;
+    int found = 0;
+
+    if(head == NULL) {
+        printf("List is empty.\n");
+        return;
+    }
+
+    while(temp != NULL) {
+        if(temp->num == value) {
+            found = 1;
+            printf("Element found at node %d\n", position);
+            return;
+        }
+        temp = temp->next;
+        position++;
+    }
+
+    if(!found) {
+        printf("Element not found in the list.\n");
+    }
 }
