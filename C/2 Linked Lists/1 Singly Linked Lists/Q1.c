@@ -1,15 +1,15 @@
 // The program below demosntrates implementation of a singly linked list. Following functions are included:
 
-// 1. void createNodeList(int n): Creates a new linked list with n nodes, where data for each node is input by the user.
-// 2. void displayList(): Prints all elements in the linked list with arrow separators (e.g., "1 -> 2 -> 3").
-// 3. void deleteFirstNode(): Removes the first node from the linked list and updates the head.
-// 4. void deleteMiddleNode(int position): Finds and removes the middle node using the "slow and fast pointer" technique.
-// 5. void deleteLastNode(): Traverses to the end of the list and removes the last node.
-// 6. void reverseAndDisplay(): Reverses the order of nodes in the list and displays the result.
-// 7. void insertNodeBeginning(int num): Adds a new node with value 'num' at the start of the list.
-// 8. void insertNodeAtEnd(int num): Adds a new node with value 'num' at the end of the list.
-// 9. void insertNodeMiddle(int num): Adds a new node with value 'num' in the middle of the list.
-// 10. void searchElement(int value): Searches for a value in the list and prints its position if found.
+// 1. createNodeList(int n): Creates a new linked list with n nodes, where data for each node is input by the user.
+// 2. displayList(): Prints all elements in the linked list with arrow separators (e.g., "1 -> 2 -> 3").
+// 3. deleteFirstNode(): Removes the first node from the linked list and updates the head.
+// 4. deleteMiddleNode(int position): Finds and removes the middle node using the "slow and fast pointer" technique.
+// 5. deleteLastNode(): Traverses to the end of the list and removes the last node.
+// 6. reverseAndDisplay(): Reverses the order of nodes in the list and displays the result.
+// 7. insertNodeBeginning(int num): Adds a new node with value 'num' at the start of the list.
+// 8. insertNodeAtEnd(int num): Adds a new node with value 'num' at the end of the list.
+// 9. insertNodeMiddle(int num): Adds a new node with value 'num' in the middle of the list.
+// 10. searchElement(int value): Searches for a value in the list and prints its position if found.
 
 
 // Author: Morteza Farrokhnejad
